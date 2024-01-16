@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EduTrack.Domain.Entities
 {
-    public class Course
+    public class Course : EntityBase<Guid>
     {
         public Guid CourseId { get; set; }
         public string Name { get; set; }

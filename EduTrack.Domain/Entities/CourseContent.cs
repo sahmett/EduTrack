@@ -1,8 +1,9 @@
-﻿using EduTrack.Domain.Enum;
+﻿using EduTrack.Domain.Common;
+using EduTrack.Domain.Enum;
 
 namespace EduTrack.Domain.Entities
 {
-    public class CourseContent
+    public class CourseContent : EntityBase<Guid>
     {
         public Guid CourseContentId { get; set; }
         public Guid CourseId { get; set; }
@@ -11,3 +12,4 @@ namespace EduTrack.Domain.Entities
         // Navigation Property
         public Course Course { get; set; }
     }
+}
