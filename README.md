@@ -16,7 +16,7 @@ Kullanıcılar, çeşitli kurslara kayıt olabilir, eğitim içeriklerine erişe
 - **Frontend**:  ASP.NET Core MVC
 - **Veritabanı**: PostgreSQL
 - **ORM**: Entity Framework Core
-- **Kullanıcı Yönetimi**: ASP.NET Core Identity
+- **Kullanıcı Yönetimi**: ASP.NET Core Identity - JWT Token 
 
 ## Veritabanı İlişki Açıklamaları
 
