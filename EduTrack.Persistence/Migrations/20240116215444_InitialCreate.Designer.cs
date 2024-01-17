@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EduTrack.Persistence.Migrations
 {
     [DbContext(typeof(EduTrackContext))]
-    [Migration("20240115231232_InitialCreate")]
+    [Migration("20240116215444_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -28,9 +28,6 @@ namespace EduTrack.Persistence.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("CreatedByUserId")
@@ -83,9 +80,6 @@ namespace EduTrack.Persistence.Migrations
                     b.Property<decimal>("Cost")
                         .HasColumnType("numeric");
 
-                    b.Property<Guid>("CourseId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("CreatedByUserId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -133,9 +127,6 @@ namespace EduTrack.Persistence.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("CourseContentId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("CourseId")
@@ -242,8 +233,8 @@ namespace EduTrack.Persistence.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("CreatedByUserId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(75)
+                        .HasColumnType("character varying(75)");
 
                     b.Property<DateTimeOffset>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
@@ -257,11 +248,13 @@ namespace EduTrack.Persistence.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(70)
+                        .HasColumnType("character varying(70)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(70)
+                        .HasColumnType("character varying(70)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
@@ -270,7 +263,8 @@ namespace EduTrack.Persistence.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ModifiedByUserId")
-                        .HasColumnType("text");
+                        .HasMaxLength(75)
+                        .HasColumnType("character varying(75)");
 
                     b.Property<DateTimeOffset?>("ModifiedOn")
                         .HasColumnType("timestamp with time zone");

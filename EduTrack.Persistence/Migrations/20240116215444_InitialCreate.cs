@@ -31,12 +31,12 @@ namespace EduTrack.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    FirstName = table.Column<string>(type: "text", nullable: false),
-                    LastName = table.Column<string>(type: "text", nullable: false),
-                    CreatedByUserId = table.Column<string>(type: "text", nullable: false),
+                    FirstName = table.Column<string>(type: "character varying(70)", maxLength: 70, nullable: false),
+                    LastName = table.Column<string>(type: "character varying(70)", maxLength: 70, nullable: false),
+                    CreatedByUserId = table.Column<string>(type: "character varying(75)", maxLength: 75, nullable: true),
                     CreatedOn = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     ModifiedOn = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
-                    ModifiedByUserId = table.Column<string>(type: "text", nullable: true),
+                    ModifiedByUserId = table.Column<string>(type: "character varying(75)", maxLength: 75, nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -62,7 +62,6 @@ namespace EduTrack.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CategoryId = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "text", nullable: false),
@@ -189,7 +188,6 @@ namespace EduTrack.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CourseId = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     InternalTrainer = table.Column<bool>(type: "boolean", nullable: false),
@@ -221,7 +219,6 @@ namespace EduTrack.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CourseContentId = table.Column<Guid>(type: "uuid", nullable: false),
                     CourseId = table.Column<Guid>(type: "uuid", nullable: false),
                     Type = table.Column<int>(type: "integer", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "text", nullable: false),

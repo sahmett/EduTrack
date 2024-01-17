@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EduTrack.Persistence.Migrations
 {
     [DbContext(typeof(EduTrackContext))]
-    [Migration("20240116021229_username")]
-    partial class username
+    [Migration("20240117005710_ContentLinkPropUpdate")]
+    partial class ContentLinkPropUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,9 +28,6 @@ namespace EduTrack.Persistence.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("CreatedByUserId")
@@ -83,9 +80,6 @@ namespace EduTrack.Persistence.Migrations
                     b.Property<decimal>("Cost")
                         .HasColumnType("numeric");
 
-                    b.Property<Guid>("CourseId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("CreatedByUserId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -135,9 +129,6 @@ namespace EduTrack.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("CourseContentId")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uuid");
 
@@ -157,11 +148,19 @@ namespace EduTrack.Persistence.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("ModifiedByUserId")
                         .HasColumnType("text");
 
                     b.Property<DateTimeOffset?>("ModifiedOn")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");

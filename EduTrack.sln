@@ -11,15 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A743B5C0-FCD7-406A-88CE-B84EEE96735D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduTrack.Domain", "EduTrack.Domain\EduTrack.Domain.csproj", "{49A74FDE-FB6A-4709-B97E-4061401D703B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduTrack.Domain", "EduTrack.Domain\EduTrack.Domain.csproj", "{49A74FDE-FB6A-4709-B97E-4061401D703B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduTrack.Persistence", "EduTrack.Persistence\EduTrack.Persistence.csproj", "{C26E67EE-531A-45AC-B2B3-F42DA935E504}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduTrack.Persistence", "EduTrack.Persistence\EduTrack.Persistence.csproj", "{C26E67EE-531A-45AC-B2B3-F42DA935E504}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{89306294-BAFD-4424-892C-F4AB36C0B312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduTrack.Application", "EduTrack.Application\EduTrack.Application.csproj", "{FA05C298-CCFE-4CE7-A8D4-1F186425B8F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduTrack.Application", "EduTrack.Application\EduTrack.Application.csproj", "{FA05C298-CCFE-4CE7-A8D4-1F186425B8F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduTrack.API", "EduTrack.API\EduTrack.API.csproj", "{DBCD4CF8-0750-489D-84B4-30DA6613172A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduTrack.API", "EduTrack.API\EduTrack.API.csproj", "{DBCD4CF8-0750-489D-84B4-30DA6613172A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduTrack.MVC", "EduTrack.MVC\EduTrack.MVC.csproj", "{298E3BB5-8F79-491E-9AB3-19B2D5B775A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{DBCD4CF8-0750-489D-84B4-30DA6613172A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBCD4CF8-0750-489D-84B4-30DA6613172A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBCD4CF8-0750-489D-84B4-30DA6613172A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298E3BB5-8F79-491E-9AB3-19B2D5B775A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298E3BB5-8F79-491E-9AB3-19B2D5B775A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298E3BB5-8F79-491E-9AB3-19B2D5B775A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298E3BB5-8F79-491E-9AB3-19B2D5B775A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{C26E67EE-531A-45AC-B2B3-F42DA935E504} = {A422853B-6622-4D8B-B093-005DCB91EEB9}
 		{FA05C298-CCFE-4CE7-A8D4-1F186425B8F0} = {E7B2EC66-4C9E-424E-B5E3-030A72898ACF}
 		{DBCD4CF8-0750-489D-84B4-30DA6613172A} = {A743B5C0-FCD7-406A-88CE-B84EEE96735D}
+		{298E3BB5-8F79-491E-9AB3-19B2D5B775A9} = {A743B5C0-FCD7-406A-88CE-B84EEE96735D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70ADF530-B642-4991-9918-6EF7589238B5}
