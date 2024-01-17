@@ -11,59 +11,8 @@ builder.Services
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IToastService, ToastService>();
 
 
-
-//builder.Services.AddIdentity<User, Role>(options =>
-//{
-//    // User Password Options
-//    options.Password.RequireDigit = false;
-//    options.Password.RequiredLength = 6;
-//    options.Password.RequiredUniqueChars = 0;
-//    options.Password.RequireNonAlphanumeric = false;
-//    options.Password.RequireLowercase = false;
-//    options.Password.RequireUppercase = false;
-//    // User Username and Email Options
-//    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@$";
-//    options.User.RequireUniqueEmail = true;
-
-//}).AddEntityFrameworkStores<EduTrackContext>()
-//    .AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
-
-
-//builder.Services.Configure<SecurityStampValidatorOptions>(options =>
-//{
-//    options.ValidationInterval = TimeSpan.FromMinutes(30);
-//});
-
-//builder.Services.ConfigureApplicationCookie(options =>
-//{
-//    options.LoginPath = new PathString("/Auth/Login");
-//    options.LogoutPath = new PathString("/Auth/Logout");
-//    options.Cookie = new CookieBuilder
-//    {
-//        Name = "EduTrack",
-//        HttpOnly = true,
-//        SameSite = SameSiteMode.Strict,
-//        SecurePolicy = CookieSecurePolicy.SameAsRequest // Always
-//    };
-//    options.SlidingExpiration = true;
-//    options.ExpireTimeSpan = TimeSpan.FromDays(7);
-//    options.AccessDeniedPath = new PathString("/Auth/AccessDenied");
-//});
-
-
-//builder.Services.AddIdentity<User, IdentityRole>()
-//            .AddEntityFrameworkStores<EduTrackContext>()
-//            .AddDefaultTokenProviders();
-
-//builder.Services.AddSession(options =>
-//{
-//    options.IdleTimeout = TimeSpan.FromMinutes(60); // Oturum zaman aþýmý süresi
-//    options.Cookie.HttpOnly = true;
-//    options.Cookie.IsEssential = true;
-//});
 
 //builder.Services.AddWebServices(builder.Configuration);
 

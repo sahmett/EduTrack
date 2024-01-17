@@ -6,6 +6,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using EduTrack.API.Services;
 using Microsoft.EntityFrameworkCore;
+using EduTrack.MVC.Services;
 
 namespace EduTrack.MVC
 {
@@ -13,48 +14,7 @@ namespace EduTrack.MVC
     {
         public static IServiceCollection AddWebServices(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddDbContext<EduTrackContext>(options =>
-            //    options.UseNpgsql(configuration.GetConnectionString("PostgreSQLDB")));
-
-            //services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
-
-            //services.AddScoped<TokenService>();
-
-            //var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
-            //var key = Encoding.ASCII.GetBytes(jwtSettings.Secret);
-
-            //services.AddIdentityCore<User>(options =>
-            //{
-            //    options.SignIn.RequireConfirmedAccount = false;
-            //    options.User.RequireUniqueEmail = true;
-            //    options.Password.RequireDigit = false;
-            //    options.Password.RequiredLength = 6;
-            //    options.Password.RequireNonAlphanumeric = false;
-            //    options.Password.RequireUppercase = false;
-            //    options.Password.RequireLowercase = false;
-            //})
-            //.AddEntityFrameworkStores<EduTrackContext>();
-
-
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //})
-            //.AddJwtBearer(options =>
-            //{
-            //    options.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ClockSkew = TimeSpan.Zero,
-            //        ValidateIssuerSigningKey = true,
-            //        IssuerSigningKey = new SymmetricSecurityKey(key),
-            //        ValidateIssuer = true, // Sabit bir değer olarak ayarlanmıştır
-            //        ValidateAudience = true, // Sabit bir değer olarak ayarlanmıştır
-            //        ValidIssuer = jwtSettings.Issuer,
-            //        ValidAudience = jwtSettings.Audience,
-            //        ValidateLifetime = true
-            //    };
-            //});
+            services.AddScoped<IToastService, ToastService>();
 
             return services;
         }
