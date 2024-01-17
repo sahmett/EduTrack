@@ -44,7 +44,7 @@ namespace EduTrack.API.Controllers
         }
 
         //add course content to course
-        [HttpPost("{id}/coursecontent")]
+        [HttpPost("{id}")]
         public async Task<IActionResult> CreateCourseContentToCourse(Guid id, [FromBody] CreateCourseContent createCourseContent)
         {
             var course = await _eduTrackContext.Courses.FindAsync(id);
@@ -70,7 +70,7 @@ namespace EduTrack.API.Controllers
         }
 
         //add course content from course content id to course 
-        [HttpPost("{id}/coursecontent/{courseContentId}")]
+        [HttpPost("{id}/{courseContentId}")]
         public async Task<IActionResult> AddCourseContentToCourse(Guid id, Guid courseContentId)
         {
             var course = await _eduTrackContext.Courses.FindAsync(id);

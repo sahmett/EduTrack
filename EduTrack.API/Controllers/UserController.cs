@@ -33,7 +33,7 @@ namespace EduTrack.API.Controllers
 
         //enrolment list by user id
         [HttpGet]
-        [Route("enrol/{userId}")]
+        [Route("{userId}")]
         public async Task<IActionResult> GetEnrolmentByUserId(Guid userId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());

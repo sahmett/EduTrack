@@ -17,7 +17,7 @@ public class AuthController : ControllerBase
         _tokenService = tokenService;
     }
 
-    [HttpPost("register")]
+    [HttpPost]
     public async Task<IActionResult> Register(RegistrationRequest registrationRequest)
     {
         if (!ModelState.IsValid)
@@ -50,7 +50,7 @@ public class AuthController : ControllerBase
         return BadRequest(ModelState);
     }
 
-    [HttpPost("login")]
+    [HttpPost]
     public async Task<IActionResult> Login(LoginRequest request)
     {
         if (!ModelState.IsValid)

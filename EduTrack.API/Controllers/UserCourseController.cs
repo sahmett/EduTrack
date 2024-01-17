@@ -25,7 +25,7 @@ namespace EduTrack.API.Controllers
 
         //enrol user by user id to course
         [HttpPost]
-        [Route("enrol/{userId}")]
+        [Route("{userId}")]
         public async Task<IActionResult> EnrolUserToCourse(Guid userId, EnrolUserToCourseRequest enrolUserToCourse)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -51,7 +51,6 @@ namespace EduTrack.API.Controllers
 
         //enrol course by enrolusertocourse model
         [HttpPost]
-        [Route("enrol")]
         public async Task<IActionResult> EnrolUserToCourse(EnrolUserToCourseRequest enrolUserToCourse)
         {
             var user = await _userManager.FindByIdAsync(enrolUserToCourse.UserId.ToString());
@@ -75,11 +74,35 @@ namespace EduTrack.API.Controllers
             return Ok();
         }
 
-      
+        //update enroled course isFinished status true by user id and course id
+        [HttpPut]
+        [Route("{userId}/{courseId}")]
+        public async Task<IActionResult> CompleteCourse(Guid userId, Guid courseId)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var course = await _eduTrackContext.Courses.FirstOrDefaultAsync(x => x.Id == courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            var userCourse = await _eduTrackContext.UserCourses.FirstOrDefaultAsync(x => x.UserId == userId && x.CourseId == courseId);
+            if (userCourse == null)
+            {
+                return NotFound();
+            }
+            userCourse.isFinished = true;
+            await _eduTrackContext.SaveChangesAsync();
+            return Ok(userCourse);
+        }
+
 
         //delete enrolment by user id and course id
         [HttpDelete]
-        [Route("enrol/{userId}/{courseId}")]
+        [Route("{userId}/{courseId}")]
         public async Task<IActionResult> DeleteEnrolment(Guid userId, Guid courseId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -101,6 +124,8 @@ namespace EduTrack.API.Controllers
             await _eduTrackContext.SaveChangesAsync();
             return Ok();
         }
+
+        
 
     }
 }
