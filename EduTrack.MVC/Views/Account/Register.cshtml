@@ -1,0 +1,79 @@
+﻿@using EduTrack.MVC.Models.Account;
+@model RegisterViewModel
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space-themed Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1920x1080/?space') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="min-h-screen flex flex-col items-center justify-center">
+            <div class="text-center">
+                <!-- [existing header content] -->
+            </div>
+
+            <div class="w-full max-w-xs">
+                <form asp-action="Register" asp-controller="Account" method="post" class="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="mb-4">
+                        <h2 class="text-center text-3xl mb-6 text-black">🌠 Register</h2>
+
+                        <!-- FirstName -->
+                        <div class="form-group mb-3">
+                            <label class="block text-black text-sm font-bold mb-2" for="FirstName">First Name</label>
+                            <input asp-for="FirstName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="FirstName" type="text" placeholder="First Name">
+                            <span asp-validation-for="FirstName" class="text-red-500"></span>
+                        </div>
+
+                        <!-- LastName -->
+                        <div class="form-group mb-3">
+                            <label class="block text-black text-sm font-bold mb-2" for="LastName">Last Name</label>
+                            <input asp-for="LastName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="LastName" type="text" placeholder="Last Name">
+                            <span asp-validation-for="LastName" class="text-red-500"></span>
+                        </div>
+
+                        <!-- UserName -->
+                        <div class="form-group mb-3">
+                            <label class="block text-black text-sm font-bold mb-2" for="UserName">Username</label>
+                            <input asp-for="UserName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="UserName" type="text" placeholder="Username">
+                            <span asp-validation-for="UserName" class="text-red-500"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group mb-3">
+                            <label class="block text-black text-sm font-bold mb-2" for="Email">Email</label>
+                            <input asp-for="Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Email" type="email" placeholder="Email">
+                            <span asp-validation-for="Email" class="text-red-500"></span>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group mb-3">
+                            <label class="block text-black text-sm font-bold mb-2" for="Password">Password</label>
+                            <input asp-for="Password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="Password" type="password" placeholder="Password">
+                            <span asp-validation-for="Password" class="text-red-500"></span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                Register
+                            </button>
+                            <a class="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-900" href="#">
+                                Already have an account?
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

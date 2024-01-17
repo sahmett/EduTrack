@@ -1,6 +1,6 @@
 ﻿@using EduTrack.MVC.Models.Account;
 
-@model AccountLoginViewModel
+@model LoginViewModel
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@
             </div>
 
         <div class="w-full max-w-xs">
-            <form asp-action="Login" asp-controller="Auth" method="post" class="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form asp-action="Login" asp-controller="Account" method="post" class="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div class="mb-4">
                     <h2 class="text-center text-3xl mb-6 text-black">🚀 Login</h2> <!-- Updated text color -->
                     <div class="form-group mb-3">
