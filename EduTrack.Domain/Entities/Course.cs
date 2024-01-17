@@ -9,7 +9,7 @@ namespace EduTrack.Domain.Entities
 {
     public class Course : EntityBase<Guid>
     {
-        public Guid CourseId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool InternalTrainer { get; set; } // if true, then the course is taught by an internal trainer, if false, then the course is taught by an external trainer

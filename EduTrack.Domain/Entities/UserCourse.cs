@@ -13,7 +13,7 @@ namespace EduTrack.Domain.Entities
 
         public DateTimeOffset EnrollmentDate { get; set; }
         public bool isFinished { get; set; }
-        public string CreatedByUserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTimeOffset CreatedOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string CreatedByUserId { get; set; }
+        public DateTimeOffset CreatedOn { get; set; }
     }
 }
