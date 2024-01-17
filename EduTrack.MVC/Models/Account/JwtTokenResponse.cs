@@ -1,4 +1,4 @@
-﻿namespace EduTrack.MVC.Models.Auth
+﻿namespace EduTrack.MVC.Models.Account
 {
     public class JwtTokenResponse
     {

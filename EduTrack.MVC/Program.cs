@@ -11,10 +11,19 @@ builder.Services
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IToastService, ToastService>();
+
+builder.Services.AddHttpClient();
+
+builder.Services.AddDistributedMemoryCache(); // Bellek içi önbellek
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Oturum zaman aþýmý
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 
-
-//builder.Services.AddWebServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -33,9 +42,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+//app.UseAuthentication(); //dikkat
 
-//app.UseSession();
+app.UseAuthorization();
+ 
+app.UseSession(); //dikkat
 
 app.UseNToastNotify();
 

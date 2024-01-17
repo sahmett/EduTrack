@@ -14,7 +14,7 @@ namespace EduTrack.MVC
     {
         public static IServiceCollection AddWebServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IToastService, ToastService>();
+            //services.AddScoped<IToastService, ToastService>();
 
             return services;
         }
