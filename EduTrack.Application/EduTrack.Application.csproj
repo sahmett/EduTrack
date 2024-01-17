@@ -6,4 +6,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EduTrack.Domain\EduTrack.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\CategoryRepository\" />
+    <Folder Include="Repositories\CourseRepository\" />
+    <Folder Include="Repositories\CourseContentRepository\" />
+    <Folder Include="Repositories\UserCourseRepository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
+  </ItemGroup>
+
 </Project>

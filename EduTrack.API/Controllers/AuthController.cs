@@ -1,8 +1,10 @@
-﻿using EduTrack.Domain.Identity;
+﻿using EduTrack.Application.Models.Auth;
+using EduTrack.Domain.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
 public class AuthController : ControllerBase
 {
@@ -16,7 +18,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register(RegistrationRequest request)
+    public async Task<IActionResult> Register(RegistrationRequest registrationRequest)
     {
         if (!ModelState.IsValid)
         {
@@ -25,15 +27,15 @@ public class AuthController : ControllerBase
 
         var user = new User
         {
-            UserName = request.UserName, // Kullanıcı adı olarak e-posta kullanılıyor
-            Email = request.Email,
-            FirstName = request.FirstName,
-            LastName = request.LastName,
+            UserName = registrationRequest.UserName, // Kullanıcı adı olarak e-posta kullanılıyor
+            Email = registrationRequest.Email,
+            FirstName = registrationRequest.FirstName,
+            LastName = registrationRequest.LastName,
             CreatedByUserId ="codemaster" // Set this field appropriately
             // Diğer gerekli alanlar
         };
 
-        var result = await _userManager.CreateAsync(user, request.Password);
+        var result = await _userManager.CreateAsync(user, registrationRequest.Password);
 
         if (result.Succeeded)
         {
@@ -49,7 +51,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(AuthRequest request)
+    public async Task<IActionResult> Login(LoginRequest request)
     {
         if (!ModelState.IsValid)
         {
@@ -66,5 +68,4 @@ public class AuthController : ControllerBase
         return Ok(new { Email = user.Email, Token = token }); // Token ile birlikte yanıt döndürülüyor
     }
 
-    // GetUserId metodu ve diğer metodlar...
 }
