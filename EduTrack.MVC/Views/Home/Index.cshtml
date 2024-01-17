@@ -1,8 +1,69 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<style>
+    body {
+        background-color: #D1D5DB; /* bg-gray-300 */
+        color: #1F2937; /* text-gray-800 */
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    /* Emoji ve diğer öğeler için özel stil */
+    .emoji {
+        position: absolute;
+        /* Emoji için özel pozisyonlandırma ekleyin */
+    }
+
+    .custom-page-container {
+        display: flex;
+        flex-direction: column;
+        /*   justify-content: center;
+            align-items: center; */
+        height: 100vh;
+    }
+</style>
+
+<style>
+    body {
+        background: url('https://source.unsplash.com/1920x1080/?space') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: sans-serif;
+    }
+</style>
+
+<div class="custom-page-container">
+    <div id="emojis-container" style="position: relative; width: 100%; height: 480px;">
+        <div id="emoji1" class="emoji">🌍</div>
+        <div id="emoji2" class="emoji">🌖</div>
+    </div>
+    <h1 class="display-4 font-weight-bold">Welcome to EduTrack Cosmos 🌌</h1>
+    <p class="lead">Embark on an astronomical adventure! 🚀</p>
+    <div id="emojis-container" style="position: relative; width: 100%; height: 480px;">
+        <div id="emoji3" class="emoji">🌌</div>
+        <div id="emoji4" class="emoji">🪐</div>
+        <div id="emoji5" class="emoji">🌠</div>
+        <div id="emoji6" class="emoji">🌕</div>
+    </div>
 </div>
+
+
+<script>
+    const emojis = document.querySelectorAll('.emoji');
+    const container = document.getElementById('emojis-container');
+    const centerX = container.offsetWidth / 2;
+    const centerY = container.offsetHeight / 2;
+    const radius = 100;
+    const speed = 0.001; // You can adjust the speed as needed
+
+    let angle = 0;
+
+    function animateEmojis() {
+        emojis.forEach((emoji, index) => {
+            const x = centerX + radius * Math.cos(angle + index * (Math.PI / 3));
+            const y = centerY + radius * Math.sin(angle + index * (Math.PI / 3));
+            emoji.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        angle += speed;
+        requestAnimationFrame(animateEmojis);
+    }
+
+    animateEmojis();
+</script>
