@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace StudyTimer.Persistence.Contexts
+namespace EduTrack.Persistence.Contexts
 {
     public class EduTrackDbContextFactory : IDesignTimeDbContextFactory<EduTrackContext>
     {

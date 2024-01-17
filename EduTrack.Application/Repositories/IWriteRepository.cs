@@ -1,7 +1,7 @@
 ﻿using EduTrack.Application.Repositories;
 using EduTrack.Domain.Common;
 
-namespace StudyTimer.Application.Repositories
+namespace EduTrack.Application.Repositories
 {
     public interface IWriteRepository<T, TId> : IRepository<T, TId> where T : EntityBase<TId>
     {
