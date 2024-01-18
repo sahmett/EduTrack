@@ -13,13 +13,13 @@ public class AccountController : Controller
     public AccountController(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
-        _apiBaseUrl = "https://localhost:7254/api"; // Replace with your API URL
+        _apiBaseUrl = "https://localhost:7254/api"; 
     }
 
     [HttpGet]
     public IActionResult Login()
     {
-        return View(); // Return your login view
+        return View(); 
     }
 
     [HttpPost]
@@ -34,11 +34,11 @@ public class AccountController : Controller
         if (response.IsSuccessStatusCode)
         {
             var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseViewModel>();
-            HttpContext.Session.SetString("Token", loginResponse.Token); // Tokenı oturumda sakla
-            // İsteğe bağlı olarak, kullanıcının e-postasını da oturumda saklayabilirsiniz
+            HttpContext.Session.SetString("Token", loginResponse.Token); 
+            
             HttpContext.Session.SetString("Email", loginResponse.Email);
 
-            return RedirectToAction("Index", "Home"); // Güvenli bir sayfaya yönlendir
+            return RedirectToAction("Index", "Home"); 
         }
 
         ModelState.AddModelError(string.Empty, "Invalid login attempt");
@@ -48,7 +48,7 @@ public class AccountController : Controller
     [HttpGet]
     public IActionResult Register()
     {
-        return View(); // Kayıt görünümünü döndür
+        return View();
     }
 
     [HttpPost]
@@ -63,22 +63,21 @@ public class AccountController : Controller
         if (response.IsSuccessStatusCode)
         {
             var registerResponse = await response.Content.ReadFromJsonAsync<LoginResponseViewModel>();
-            HttpContext.Session.SetString("Token", registerResponse.Token); // Tokenı oturumda sakla
+            HttpContext.Session.SetString("Token", registerResponse.Token); 
             HttpContext.Session.SetString("Email", registerResponse.Email);
 
-            return RedirectToAction("Index", "Home"); // Kayıttan sonra güvenli bir sayfaya yönlendir
+            return RedirectToAction("Index", "Home"); 
         }
 
-        // API'dan başarısız bir yanıt geldiğinde hata mesajını ekle
+        
         ModelState.AddModelError(string.Empty, "Registration failed");
         return View(model);
     }
 
     public IActionResult Logout()
     {
-        HttpContext.Session.Remove("Token"); // Remove the token from the session
+        HttpContext.Session.Remove("Token"); 
         return RedirectToAction("Login");
     }
 
-    // Other actions...
 }
