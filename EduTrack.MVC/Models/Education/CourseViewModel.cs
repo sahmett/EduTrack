@@ -1,4 +1,6 @@
-﻿namespace EduTrack.MVC.Models.Education
+﻿using EduTrack.MVC.Models.Content;
+
+namespace EduTrack.MVC.Models.Education
 {
     public class CourseViewModel
     {
@@ -8,6 +10,11 @@
         public int Capacity { get; set; }
         public decimal Cost { get; set; }
         public TimeSpan Duration { get; set; }
+       
+
+        public List<CourseContentViewModel> CourseContents { get; set; }
+        public List<CategoryViewModel> Categories { get; set; }
+        public Guid CourseContentId { get; set; }
         public string CategoryId { get; set; }
     }
 }

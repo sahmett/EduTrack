@@ -1,10 +1,9 @@
-﻿namespace EduTrack.MVC.Models.Education
+﻿namespace EduTrack.MVC.Models.Content
 {
-    public class CategoryViewModel
+    public class CourseContentViewModel
     {
         public string Name { get; set; }
         public string Description { get; set; }
-
         public Guid Id { get; set; }
     }
 }
