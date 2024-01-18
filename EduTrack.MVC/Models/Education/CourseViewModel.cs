@@ -1,4 +1,4 @@
-﻿namespace EduTrack.MVC.Models.Course
+﻿namespace EduTrack.MVC.Models.Education
 {
     public class CourseViewModel
     {

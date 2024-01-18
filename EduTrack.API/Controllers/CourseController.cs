@@ -33,6 +33,8 @@ namespace EduTrack.API.Controllers
                 CategoryId = Guid.Parse(createCourse.CategoryId),
                 CreatedByUserId = "codemaster"
 
+                //course content null
+
                 //Duration = TimeSpan.Parse("1:00:00"),
                 //CategoryId = Guid.Parse("c71cae3f-1a70-40cb-9147-44cb87587682"),
                 //InternalTrainer = true,
