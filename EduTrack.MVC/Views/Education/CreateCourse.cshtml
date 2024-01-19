@@ -1,6 +1,4 @@
-﻿@using EduTrack.MVC.Models.Content;
-@using EduTrack.MVC.Models.Education;
-@model EduTrack.MVC.Models.Education.CourseViewModel
+﻿@model EduTrack.MVC.Models.Education.CourseViewModel
 
 @{
     ViewData["Title"] = "CreateCourse";
@@ -50,7 +48,7 @@
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
 
-@*             <!-- Kategori Seçimi için Dropdown Menü -->
+            <!-- Kategori Seçimi için Dropdown Menü -->
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label">Category</label>
                 <select asp-for="CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" class="form-control">
@@ -66,26 +64,7 @@
                     <option value="">-- Select Course Content --</option>
                 </select>
                 <span asp-validation-for="CourseContentId" class="text-danger"></span>
-            </div> *@
-
-            <!-- Kategori Seçimi için Dropdown Menü -->
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label">Category</label>
-                <select asp-for="CategoryId" asp-items="@(Model.Categories != null ? new SelectList(Model.Categories, "Id", "Name") : new SelectList(new List<CategoryViewModel>()))" class="form-control">
-                    <option value="">-- Select Category --</option>
-                </select>
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
-
-            <!-- Kurs İçeriği Seçimi için Dropdown Menü -->
-            <div class="form-group">
-                <label asp-for="CourseContentId" class="control-label">Course Content</label>
-                <select asp-for="CourseContentId" asp-items="@(Model.CourseContents != null ? new SelectList(Model.CourseContents, "Id", "Name") : new SelectList(new List<CourseContentViewModel>()))" class="form-control">
-                    <option value="">-- Select Course Content --</option>
-                </select>
-                <span asp-validation-for="CourseContentId" class="text-danger"></span>
-            </div>
-
 
 
 
