@@ -56,7 +56,7 @@ namespace EduTrack.API
                 };
             });
 
-            services.AddMemoryCache();
+           // services.AddMemoryCache();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(option =>

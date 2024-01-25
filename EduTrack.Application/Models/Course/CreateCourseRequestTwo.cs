@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EduTrack.Application.Models.Course
 {
-        public class CreateCourseRequest
+        public class CreateCourseRequestTwo
         {
             public string Name { get; set; }
             public string Description { get; set; }
@@ -14,6 +14,7 @@ namespace EduTrack.Application.Models.Course
             public int Capacity { get; set; }
             public decimal Cost { get; set; }
             public TimeSpan Duration { get; set; }
-            public string CategoryId { get; set; } //Guid 
-    } 
+            public string CategoryId { get; set; }
+            public string CourseContentId { get; set; }
+        }
     }

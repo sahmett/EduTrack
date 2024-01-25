@@ -45,6 +45,34 @@ namespace EduTrack.API.Controllers
             return Ok(course);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateCourseTwo([FromBody] CreateCourseRequestTwo createCourse)
+        {
+            var course = new Course
+            {
+                Id = Guid.NewGuid(),
+                Name = createCourse.Name,
+                Description = createCourse.Description,
+                InternalTrainer = createCourse.InternalTrainer,
+                Capacity = createCourse.Capacity,
+                Cost = createCourse.Cost,
+                Duration = createCourse.Duration,
+                CategoryId = Guid.Parse(createCourse.CategoryId),
+                CourseContentId = Guid.Parse(createCourse.CourseContentId),
+                CreatedByUserId = "codemaster"
+
+                //course content null
+
+                //Duration = TimeSpan.Parse("1:00:00"),
+                //CategoryId = Guid.Parse("c71cae3f-1a70-40cb-9147-44cb87587682"),
+                //InternalTrainer = true,
+
+            };
+            await _eduTrackContext.Courses.AddAsync(course);
+            await _eduTrackContext.SaveChangesAsync();
+            return Ok(course);
+        }
+
         //add course content to course
         [HttpPost("{id}")]
         public async Task<IActionResult> CreateCourseContentToCourse(Guid id, [FromBody] CreateCourseContent createCourseContent)

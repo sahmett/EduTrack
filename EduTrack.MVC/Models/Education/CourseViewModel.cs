@@ -12,8 +12,8 @@ namespace EduTrack.MVC.Models.Education
         public TimeSpan Duration { get; set; }
        
 
-        public List<CourseContentViewModel> CourseContents { get; set; }
-        public List<CategoryViewModel> Categories { get; set; }
+        //public List<CourseContentViewModel> CourseContents { get; set; }
+        //public List<CategoryViewModel> Categories { get; set; }
         public Guid CourseContentId { get; set; }
         public string CategoryId { get; set; }
     }

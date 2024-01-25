@@ -100,6 +100,8 @@ namespace EduTrack.MVC.Controllers
                 return View();
 
             var httpClient = _httpClientFactory.CreateClient();
+
+
             var response = await httpClient.PostAsJsonAsync($"{_apiBaseUrl}/Course/Create", model);
 
             if (response.IsSuccessStatusCode)
@@ -109,6 +111,8 @@ namespace EduTrack.MVC.Controllers
 
             ModelState.AddModelError(string.Empty, "Course creation failed");
             return View(model);
+
+
         }
     }
 
